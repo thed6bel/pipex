@@ -1,0 +1,58 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: hucorrei <hucorrei@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/11/16 10:19:25 by hucorrei          #+#    #+#              #
+#    Updated: 2023/01/19 13:20:55 by hucorrei         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+### COMPILATION ###
+CC		= gcc
+CFLAGS	= -Wall -Wextra -Werror
+
+### EXECUTABLE ###
+NAME	= pipex
+
+### INCLUDES ###
+
+
+
+### SOURCE FILES ###
+SRCS	= 	ft_pipex.c \
+			ft_parsing.c \
+			ft_tools.c \
+
+### OBJECTS ###
+OBJS	= ${SRCS:.c=.o}
+
+
+
+### RULES ###
+RM		= rm -rf
+
+${NAME}:	${OBJS}
+		@${MAKE} -C ./libft
+		@${CC} ${CFLAGS} ${OBJS} ./lib/libft/libft.a -o ${NAME}
+
+all:	${NAME}
+
+clean:
+		@${MAKE} -C ./libft fclean
+		${RM} ${OBJS}
+
+fclean:	clean
+		${RM} ${NAME}
+
+re:		fclean all
+
+push:
+	git add .
+	git status
+	git commit -m pipex
+	git push
+
+.PHONY:	all clean fclean re push
