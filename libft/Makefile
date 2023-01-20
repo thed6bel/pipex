@@ -6,7 +6,7 @@
 #    By: hucorrei <hucorrei@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 09:35:36 by hucorrei          #+#    #+#              #
-#    Updated: 2023/01/17 10:55:53 by hucorrei         ###   ########.fr        #
+#    Updated: 2023/01/20 13:46:45 by hucorrei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,7 +72,7 @@ CFLAGS	= -Wall -Wextra -Werror
 ${NAME}:	${OBJS}
 		ar rc ${NAME} ${OBJS}
 		ranlib ${NAME}
-.o.c:
+%.o%.c:
 		${CC} ${CFLAGS} -o  $@ -c  $<
 
 all:	${NAME}

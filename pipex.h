@@ -6,7 +6,7 @@
 /*   By: hucorrei <hucorrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 13:32:04 by hucorrei          #+#    #+#             */
-/*   Updated: 2023/01/19 13:15:41 by hucorrei         ###   ########.fr       */
+/*   Updated: 2023/01/20 14:01:40 by hucorrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 
 char	*ft_path(char *cmd, char **envp);
 void	ft_free(char **str);
-void	ft_terminer(char *a);
+void	ft_exit(char *a);
+void	ft_cmd_not_found(char **cmd);
+void	ft_argc_error(void);
 
 #endif
