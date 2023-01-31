@@ -6,7 +6,7 @@
 /*   By: hucorrei <hucorrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 13:27:31 by hucorrei          #+#    #+#             */
-/*   Updated: 2023/01/20 14:05:42 by hucorrei         ###   ########.fr       */
+/*   Updated: 2023/01/26 13:42:44 by hucorrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int	main(int argc, char **argv, char **envp)
 	pid_t	pid2;
 
 	errno = 0;
-	if (argc != 5)
+	if (argc != 5 || *argv[2] == '\0' || *argv[3] == '\0')
 		ft_argc_error();
 	if (pipe(pipefd) < 0)
 		ft_exit("pipe");
